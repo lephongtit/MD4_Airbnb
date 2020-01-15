@@ -1,4 +1,28 @@
 package com.codegym.md4_airbnb.service.impl;
 
-public class RoleServiceImpl {
+import com.codegym.md4_airbnb.model.Role;
+import com.codegym.md4_airbnb.repository.RoleRepository;
+import com.codegym.md4_airbnb.service.RoleService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class RoleServiceImpl implements RoleService {
+    @Autowired
+    private RoleRepository roleRepository;
+    @Override
+    public Iterable<Role> findAll() {
+        return roleRepository.findAll();
+    }
+
+    @Override
+    public void save(Role role) {
+        roleRepository.save(role);
+
+    }
+
+    @Override
+    public Role findByName(String name) {
+        return roleRepository.findByName(name);
+    }
 }
