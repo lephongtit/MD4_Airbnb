@@ -17,7 +17,7 @@ public class Role implements Serializable {
 
     private String name;
 
-    public static final long getSerializable(){
+    public static long getSerializable(){
         return serializable;
     }
 
@@ -25,6 +25,22 @@ public class Role implements Serializable {
     }
 
     public Role(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 }
