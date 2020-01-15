@@ -15,7 +15,7 @@ public class User implements Serializable {
     private Long id;
 
     @Column(unique = true, nullable = false)
-    private String name;
+    private String username;
 
     @Column(nullable = false)
     private String password;
@@ -42,8 +42,8 @@ public class User implements Serializable {
 
     public static long getSerialVersionUID(){return serialVersionUID;}
 
-    public User(String name, String password, String comfirmPassword, String lastName, String firstName, @Email String email, String phoneNumber, String gender, boolean enabled, Set<Role> roles) {
-        this.name = name;
+    public User(String username, String password, String comfirmPassword, String lastName, String firstName, @Email String email, String phoneNumber, String gender, boolean enabled, Set<Role> roles) {
+        this.username = username;
         this.password = password;
         this.comfirmPassword = comfirmPassword;
         this.lastName = lastName;
@@ -66,12 +66,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
