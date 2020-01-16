@@ -1,0 +1,5 @@
+JDBC_DATABASE_USERNAME=hgtombewuervxd
+JDBC_DATABASE_PASSWORD=74baa34236116e99b81edc6b508b47801cf7a2cc2d7c39518431d5643cd6c98a
+JDBC_DATABASE_DRIVER=org.postgresql.Driver
+SPRING_JPA_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQL9Dialect
+JDBC_DATABASE_URL=jdbc:postgres://hgtombewuervxd:74baa34236116e99b81edc6b508b47801cf7a2cc2d7c39518431d5643cd6c98a@ec2-174-129-230-117.compute-1.amazonaws.com:5432/d67lmina6sdn74
