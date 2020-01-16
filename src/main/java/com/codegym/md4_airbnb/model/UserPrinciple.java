@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
-
+ // trung gian giua ng dung voi contrller(1 form de dang nhap)
 public class UserPrinciple implements UserDetails {
     private static final  long serialVersionUID =1L;
 
