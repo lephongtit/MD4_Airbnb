@@ -1,6 +1,5 @@
 package com.codegym.md4_airbnb.model;
 
-
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
@@ -9,16 +8,15 @@ import java.util.Collection;
 public class JwtReponse {
     private Long id;
     private String token;
-    private String type="Bearer";
+    private String type = "Bearer";
     private String username;
     private Collection<? extends GrantedAuthority> roles;
 
-    public JwtReponse(Long id, String token, String type, String username, Collection<? extends GrantedAuthority> roles) {
-        this.id = id;
-        this.token = token;
-        this.type = type;
+    public JwtReponse(String accessToken, Long id, String username, Collection<? extends GrantedAuthority> roles) {
+        this.token = accessToken;
         this.username = username;
         this.roles = roles;
+        this.id = id;
     }
 
     public Long getId() {
@@ -29,20 +27,20 @@ public class JwtReponse {
         this.id = id;
     }
 
-    public String getToken() {
+    public String getAccessToken() {
         return token;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setAccessToken(String accessToken) {
+        this.token = accessToken;
     }
 
-    public String getType() {
+    public String getTokenType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setTokenType(String tokenType) {
+        this.type = tokenType;
     }
 
     public String getUsername() {
@@ -55,9 +53,5 @@ public class JwtReponse {
 
     public Collection<? extends GrantedAuthority> getRoles() {
         return roles;
-    }
-
-    public void setRoles(Collection<? extends GrantedAuthority> roles) {
-        this.roles = roles;
     }
 }

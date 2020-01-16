@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
-
+// file email gui xac thuc
 @Entity
 @Data
 public class VerificationToken implements Serializable {
