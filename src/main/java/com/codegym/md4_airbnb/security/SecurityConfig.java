@@ -82,7 +82,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
                         "/forgot-password",
                         "/new-password/**",
                         "/users/**",
-                        "/role",
+                        "/roles",
                         "/category/room",
                         "/category/house").permitAll()
                 .antMatchers(HttpMethod.GET,
