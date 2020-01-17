@@ -8,6 +8,7 @@ public class House {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nameHouse;
+    private String hostName;
 
     @ManyToOne
     @JoinColumn(name = "category_house")
@@ -18,6 +19,7 @@ public class House {
 
     public House() {
     }
+
 
     public House(String nameHouse, com.codegym.md4_airbnb.model.category_house category_house, String address, String description, String imageUrls) {
         this.nameHouse = nameHouse;
