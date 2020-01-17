@@ -122,9 +122,6 @@ public class UserController {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setComfirmPassword(passwordEncoder.encode(user.getComfirmPassword()));
         userService.save(user);
-        VerificationToken token = new VerificationToken(user);
-        token.setExpiryDate(10);
-        verificationTokenService.save(token);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
