@@ -33,4 +33,12 @@ public class CategoryHouseServiceImpl implements CategoryHouseService {
     public CategoryHouse findByName(String name) {
         return categoryHouseRepository.findByName(name);
     }
+
+    @Override
+    public void delete(Long id) {
+        Optional<CategoryHouse> categoryHouse= categoryHouseRepository.findById(id);
+        if (categoryHouse.isPresent()){
+            categoryHouseRepository.delete(categoryHouse.get());
+        }
+    }
 }

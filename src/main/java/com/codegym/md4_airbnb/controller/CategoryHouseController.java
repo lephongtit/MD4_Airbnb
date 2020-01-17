@@ -39,4 +39,14 @@ public class CategoryHouseController {
         }
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<CategoryHouse> delete(@PathVariable("id") Long id){
+        Optional<CategoryHouse> categoryHouse= categoryHouseService.findById(id);
+        if (categoryHouse!= null){
+            return new ResponseEntity(categoryHouse,HttpStatus.NOT_FOUND);
+        }
+        categoryHouseService.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
