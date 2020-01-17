@@ -20,14 +20,14 @@ public class User implements Serializable {
     @Column(nullable = false)
     private String password;
 
-   // @Column(nullable = false)
+    @Column(nullable = false)
     private String comfirmPassword;
 
     private String lastName;
     private String firstName;
 
     @Email
-   // @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String email;
 
     private String phoneNumber;
