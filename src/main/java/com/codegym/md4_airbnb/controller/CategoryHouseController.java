@@ -46,7 +46,7 @@ public class CategoryHouseController {
             return new ResponseEntity(categoryHouse,HttpStatus.NOT_FOUND);
         }
         categoryHouseService.delete(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity( "thành công",HttpStatus.OK);
     }
 
 }
