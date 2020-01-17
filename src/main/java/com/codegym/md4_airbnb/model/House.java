@@ -11,8 +11,8 @@ public class House {
     private String hostName;
 
     @ManyToOne
-    @JoinColumn(name = "category_house")
-    private category_house category_house;
+    @JoinColumn(name = "CategoryHouse")
+    private CategoryHouse category_house;
     private String address;
     private String description;
     private String imageUrls;
@@ -21,7 +21,7 @@ public class House {
     }
 
 
-    public House(String nameHouse, com.codegym.md4_airbnb.model.category_house category_house, String address, String description, String imageUrls) {
+    public House(String nameHouse, CategoryHouse category_house, String address, String description, String imageUrls) {
         this.nameHouse = nameHouse;
         this.category_house = category_house;
         this.address = address;
@@ -45,11 +45,11 @@ public class House {
         this.nameHouse = nameHouse;
     }
 
-    public com.codegym.md4_airbnb.model.category_house getCategory_house() {
+    public CategoryHouse getCategory_house() {
         return category_house;
     }
 
-    public void setCategory_house(com.codegym.md4_airbnb.model.category_house category_house) {
+    public void setCategory_house(CategoryHouse category_house) {
         this.category_house = category_house;
     }
 

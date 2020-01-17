@@ -6,16 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class category_house {
+public class CategoryHouse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    public category_house() {
+    public CategoryHouse() {
     }
 
-    public category_house(String name) {
+    public CategoryHouse(String name) {
         this.name = name;
     }
 
