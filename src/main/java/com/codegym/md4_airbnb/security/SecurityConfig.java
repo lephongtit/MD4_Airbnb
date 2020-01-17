@@ -78,23 +78,25 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
                         "/login",
                         "/room/**",
                         "/register",
-                        "/confirm-account/**",
                         "/forgot-password",
-                        "/new-password/**",
-                        "/users/**",
-                        "/roles",
-                        "/category/room",
-                        "/category/house/**").permitAll()
-                .antMatchers(HttpMethod.GET,
-                        "/host/**",
-                        "/oder/**").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
-                .antMatchers(HttpMethod.DELETE, "/categories",
-                        "/typeOfQuestions",
-                        "/questions",
-                        "/answers",
-                        "/quizzes").access("hasRole('ROLE_ADMIN')")
+                        "/house/**"
+                        ).permitAll()
+
+                .antMatchers(HttpMethod.GET
+                        ).access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+
+                .antMatchers(HttpMethod.DELETE,
+                        "/category/house/**"
+                ).access("hasRole('ROLE_ADMIN')")
+
+                .antMatchers(HttpMethod.POST,
+                        "/category/house/**"
+                        ).access("hasRole('ROLE_ADMIN')")
+
+
                 .antMatchers(HttpMethod.PUT, "/users")
                 .access("hasRole('ROLE_USER')")
+
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
