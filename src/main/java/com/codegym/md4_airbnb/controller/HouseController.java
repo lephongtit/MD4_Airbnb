@@ -4,7 +4,6 @@ import com.codegym.md4_airbnb.model.CategoryHouse;
 import com.codegym.md4_airbnb.model.House;
 import com.codegym.md4_airbnb.service.CategoryHouseService;
 import com.codegym.md4_airbnb.service.HouseService;
-import jdk.tools.jlink.internal.TaskHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,19 +13,19 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/house")
+
 public class HouseController {
     @Autowired
     private HouseService houseService;
     @Autowired
     private CategoryHouseService categoryHouseService;
 
-    @GetMapping
+    @GetMapping("/house")
     public ResponseEntity<Iterable<House>> listHouse(){
         Iterable<House> houses= houseService.findAll();
         return new ResponseEntity<>(houses, HttpStatus.OK);
     }
-    @PostMapping
+    @PostMapping("/house")
     public  ResponseEntity<House> createHouse(@RequestBody House house){
         if (house.getCategory_house() !=null){
             String nameHouse = house.getCategory_house().getName();
@@ -37,7 +36,7 @@ public class HouseController {
         houseService.save(house);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/house/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Long id){
         Optional<House> house=houseService.findById(id);
         if (house == null){
@@ -46,7 +45,7 @@ public class HouseController {
         houseService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    @PutMapping("/{id}")
+    @PutMapping("/house/{id}")
     public  ResponseEntity<Void> edit(@PathVariable("id") Long id, @RequestBody House house){
         Optional<House> house1=houseService.findById(id);
         if (house1.isPresent()){
@@ -78,7 +77,7 @@ public class HouseController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
+// chi tiet 1 nha
    @GetMapping("house/{id}")
    public  ResponseEntity<House> findById(@PathVariable Long id){
         Optional<House> house=houseService.findById(id);
