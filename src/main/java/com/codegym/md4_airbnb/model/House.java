@@ -21,12 +21,21 @@ public class House {
     }
 
 
-    public House(String nameHouse, CategoryHouse category_house, String address, String description, String imageUrls) {
+    public House(String nameHouse,String hostName, CategoryHouse category_house, String address, String description, String imageUrls) {
         this.nameHouse = nameHouse;
+        this.hostName = hostName;
         this.category_house = category_house;
         this.address = address;
         this.description = description;
         this.imageUrls = imageUrls;
+    }
+
+    public String getHostName() {
+        return hostName;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
     }
 
     public Long getId() {
