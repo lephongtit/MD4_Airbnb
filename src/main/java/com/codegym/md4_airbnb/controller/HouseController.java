@@ -36,6 +36,7 @@ public class HouseController {
         houseService.save(house);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
     @DeleteMapping("/house/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Long id){
         Optional<House> house=houseService.findById(id);
@@ -45,6 +46,8 @@ public class HouseController {
         houseService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+
     @PutMapping("/house/{id}")
     public  ResponseEntity<Void> edit(@PathVariable("id") Long id, @RequestBody House house){
         Optional<House> house1=houseService.findById(id);

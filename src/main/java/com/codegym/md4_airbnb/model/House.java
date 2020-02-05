@@ -1,6 +1,7 @@
 package com.codegym.md4_airbnb.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class House {
@@ -15,7 +16,20 @@ public class House {
     private CategoryHouse category_house;
     private String address;
     private String description;
+
+    @Column(columnDefinition = "TEXT")
     private String imageUrls;
+
+    @OneToMany(targetEntity = Room.class)
+    private List<Room> rooms;
+
+    public List<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
+    }
 
     public House() {
     }
